@@ -22,5 +22,7 @@ public class Main {
         System.out.println("Muestro el Jaguar : " + cochesList.get(0));
 
         System.out.println("Muestro el Mercedes : " + cochesList.get(1));
+
+        System.out.println("Muestro el Seat : " + cochesList.get(2));
     }
 }
