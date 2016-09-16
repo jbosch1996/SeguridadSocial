@@ -20,5 +20,7 @@ public class Main {
         cochesList.add(seat);
 
         System.out.println("Muestro el Jaguar : " + cochesList.get(0));
+
+        System.out.println("Muestro el Mercedes : " + cochesList.get(1));
     }
 }
