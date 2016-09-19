@@ -15,12 +15,13 @@ package com.company.SeguridadSocial;
         }
 
         public void bajaPersona(String dni) {
-            personasList.remove(dni);
+            personasList.removeIf(persona -> persona.getDni().equals(dni));
         }
 
-        public Persona obtenerPersonaPorDNI(String dni) {
-            if()
+        public String obtenerPersonaPorDNI(String dni,String nombre) {
+
         }
+
 
         public Persona obtenerPersonaPorNumSS(String numSS) {
         }
