@@ -1,14 +1,14 @@
 package com.company.SeguridadSocial;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by usu26 on 23/09/2016.
  */
-public class SeguridadSocialHashMap {
+public class SerguridadSocialHashMap{
 
     private Map<String, Persona> personaMapDni = new HashMap<>();
     private Map<String, Persona> personaMapSs = new HashMap<>();
@@ -24,7 +24,7 @@ public class SeguridadSocialHashMap {
     public Persona obtenerPersonaPorDNI(String dni, String nombre) {
         //Para obtener las keys
         //personaMapDni.keySet();//Obtener todas las Keys
-        //personaMapDni.values();//Obtener todos los valores
+        //pers  onaMapDni.values();//Obtener todos los valores
         //personaMapDni.remove(dni);
         return personaMapDni.get(dni);
     }
@@ -37,15 +37,18 @@ public class SeguridadSocialHashMap {
         return personaMapSs.get(numSS);
     }
 
-    public List<Persona> obtenerPersonasRangoSalarial(Persona persona, double min, double max) {
-        List<Persona> aux = new ArrayList<>();
-        if (persona.getSalario() >= min && persona.getSalario() <= max) {
-            aux.add(persona);
+    public List<Persona> obtenerPersonasRangoSalarial(double min, double max) {
 
-        }
-        return aux;
+
+        return personaMapDni.values().stream().filter(persona -> persona.getSalario()>min
+                && persona.getSalario()< max).collect(Collectors.toList());
     }
-}
+    public List<Persona> obtenerPersonasMayoresQue(int edad) {
+        return personaMapDni.values().stream().filter(persona -> persona.getEdad() > edad).collect(Collectors.toList());
+    }
+    public List<Persona> obtenerTodas(){
+        return personaMapDni.values().stream().collect(Collectors.toList());
 
-
+    }
+    }
 

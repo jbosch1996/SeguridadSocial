@@ -26,7 +26,6 @@ public class Main {
 
         System.out.println("Lista de afiliados a la S.S.: " + seguridadSocial.obtenerTodas());
 
-        System.out.println("obtenerPersonaPorDNI: " + seguridadSocial.obtenerPersonaPorDNI(jose.getDni()));
 
         System.out.println("obtenerPersonaPorNumSS: " + seguridadSocial.obtenerPersonaPorNumSS(maria.getNum_seguridad()));
 
