@@ -102,6 +102,12 @@ public class Persona {
         return result;
     }
 
+	@Override
+	public String toString() {
+		return "Persona [dni=" + dni + ", num_seguridad=" + num_seguridad + ", nombre=" + nombre + ", apellidos="
+				+ apellidos + ", edad=" + edad + ", salario=" + salario + "]";
+	}
+    
+    
+
 }
-
-

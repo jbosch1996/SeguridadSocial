@@ -1,5 +1,7 @@
 package com.company.SeguridadSocial;
 
+import com.company.SeguridadSocial.Persona;
+
     import java.util.ArrayList;
     import java.util.List;
 
@@ -9,7 +11,7 @@ package com.company.SeguridadSocial;
             personasList = new ArrayList<>();
         }
 
-        // Debes comprobar que no se introduzcan dos personas con el mismo DNI/Número Seguridad Social
+        // Debes comprobar que no se introduzcan dos personas con el mismo DNI/N�mero Seguridad Social
         public void altaPersona(Persona persona) {
             boolean repetida = false;
             for (Persona personaActual : personasList) {
@@ -52,12 +54,13 @@ package com.company.SeguridadSocial;
 
         public Persona obtenerPersonaPorNumSS(String numSS) {
             for (Persona personaActual : personasList) {
-                if (personaActual.getDni().equals(numSS)) {
+                if (personaActual.getNum_seguridad().equals(numSS)) {
                     return personaActual;
                 }
             }
             return null;
         }
+        
 
         public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
             List<Persona> aux = new ArrayList<>();
@@ -91,5 +94,3 @@ package com.company.SeguridadSocial;
                     '}';
         }
     }
-
-
