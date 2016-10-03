@@ -1,6 +1,5 @@
-package com.company.SeguridadSocial;
+package com.company.SeguridadSocial.SeguridadSocial;
 
-import com.company.SeguridadSocial.Persona;
 
 /**
  * Created by usu26 on 19/09/2016.
