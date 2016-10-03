@@ -1,17 +1,18 @@
-package com.company.SeguridadSocial;
+package com.company.Prueba;
 
-import java.util.HashMap;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.TreeMap;
 
 /**
  * Created by usu26 on 23/09/2016.
  */
-public class SerguridadSocialHashMap{
+public class SeguridadSocialTreeMap{
 
-    private Map<String, Persona> personaMapDni = new HashMap<>();
-    private Map<String, Persona> personaMapSs = new HashMap<>();
+    private Map<String, Persona> personaMapDni = new TreeMap<>();
+    private Map<String, Persona> personaMapSs = new TreeMap<>();
 
     public void altaPersona(Persona persona) {
 
@@ -37,18 +38,38 @@ public class SerguridadSocialHashMap{
         return personaMapSs.get(numSS);
     }
 
-    public List<Persona> obtenerPersonasRangoSalarial(double min, double max) {
+    /*ublic List<Persona> obtenerPersonasRangoSalarial(double min, double max) {
 
 
         return personaMapDni.values().stream().filter(persona -> persona.getSalario()>min
                 && persona.getSalario()< max).collect(Collectors.toList());
+    }*/
+    public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
+        List<Persona> aux = new ArrayList<>();
+        for (Persona persona : personaMapDni.values()){
+            if (persona.getSalario()>=min && persona.getSalario()<=max){
+                aux.add(persona);
+            }
+        }
+        return aux;
     }
+
     public List<Persona> obtenerPersonasMayoresQue(int edad) {
-        return personaMapDni.values().stream().filter(persona -> persona.getEdad() > edad).collect(Collectors.toList());
+        List<Persona> aux = new ArrayList<>();
+        for (Persona persona : personaMapDni.values()) {
+            if (persona.getEdad()> edad){
+                aux.add(persona);
+            }
+        }
+        return aux;
     }
     public List<Persona> obtenerTodas(){
-        return personaMapDni.values().stream().collect(Collectors.toList());
-
+        List<Persona> aux = new ArrayList<>();
+        for (Persona persona : personaMapDni.values()) {
+            aux.add(persona);
+        }
+        return aux;
     }
-    }
 
+
+}
