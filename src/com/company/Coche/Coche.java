@@ -74,16 +74,6 @@ public class Coche {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
-
-    @Override
     public String toString() {
         return "Coche{" +
                 "matricula='" + matricula + '\'' +

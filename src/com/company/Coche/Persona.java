@@ -10,18 +10,16 @@ public class Persona {
     private String nombre;
     private String apellidos;
     private int edad;
-    private double salario;
 
 
     public Persona() {}
 
-    public Persona(String dni, String num_seguridad, String nombre, String apellidos, int edad, double salario) {
+    public Persona(String dni, String num_seguridad, String nombre, String apellidos, int edad) {
         this.dni = dni;
         this.num_seguridad = num_seguridad;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
-        this.salario = salario;
     }
 
     public String getDni() {
@@ -64,13 +62,6 @@ public class Persona {
         this.edad = edad;
     }
 
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,7 +70,6 @@ public class Persona {
         Persona persona = (Persona) o;
 
         if (edad != persona.edad) return false;
-        if (Double.compare(persona.salario, salario) != 0) return false;
         if (dni != null ? !dni.equals(persona.dni) : persona.dni != null) return false;
         if (num_seguridad != null ? !num_seguridad.equals(persona.num_seguridad) : persona.num_seguridad != null)
             return false;
@@ -90,24 +80,22 @@ public class Persona {
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = dni != null ? dni.hashCode() : 0;
+        int result = dni != null ? dni.hashCode() : 0;
         result = 31 * result + (num_seguridad != null ? num_seguridad.hashCode() : 0);
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (apellidos != null ? apellidos.hashCode() : 0);
         result = 31 * result + edad;
-        temp = Double.doubleToLongBits(salario);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 
-	@Override
-	public String toString() {
-		return "Persona [dni=" + dni + ", num_seguridad=" + num_seguridad + ", nombre=" + nombre + ", apellidos="
-				+ apellidos + ", edad=" + edad + ", salario=" + salario + "]";
-	}
-    
-    
-
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "dni='" + dni + '\'' +
+                ", num_seguridad='" + num_seguridad + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }
