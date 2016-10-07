@@ -33,18 +33,19 @@ public class RegistroVehiculos {
     }
 
 
-    public Coche obtenerVehiculoPrecioMax() {
+    public Coche obtenerVehiculoPrecioMax(double max) {
 
-        Coche max = null;
+        Coche max_coche = null;
 
         for (Coche coche : coches) {
-            if (max == null) {
-                max = coche;
-            } else if (coche.getPrecio() > max) {
-                max = coche;
+            if (coche.getPrecio() >= max) {
+                max_coche = coche;
+            }
+            else if(max_coche == null){
+                return max_coche;
             }
         }
-        return max;
+        return max_coche;
     }
 
     public List<Coche> obtenerVehiculosMarca(String marca) {

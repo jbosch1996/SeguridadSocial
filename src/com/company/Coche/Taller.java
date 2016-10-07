@@ -21,5 +21,6 @@ public class Taller {
     }
 
     public Set<Persona> obtenerClientes(){
+
     }
 }

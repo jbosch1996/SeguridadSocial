@@ -19,21 +19,13 @@ public class MainVehiculos {
 
         System.out.println(registro.obtenerTodos());
 
-        registro
-                .obtenerVehiculo("4749JAV")
-                .ifPresent(
-                        coche -> System.out.println("Coche con matricula 4749JAV: " + coche)
-                );
-
-        registro
-                .obtenerVehiculosMarca("Lexus")
+        registro.obtenerVehiculosMarca("Lexus")
                 // esto es un bucle tradicional expresado con Java 8
                 .forEach(
                         coche -> System.out.println(coche)
                 );
 
-        registro
-                .obtenerVehiculoPrecioMax()
+        registro.obtenerVehiculoPrecioMax()
                 // esta expresión es equivalente a verificar diferente de null con Java 8
                 .ifPresent(
                         coche -> System.out.println("Coche Max precio: " + coche)
