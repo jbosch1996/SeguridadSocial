@@ -1,5 +1,8 @@
 package com.company.Coche;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainVehiculos {
     public static void main(String[] args) {
         Coche Jaguar = new Coche("1234ENG", "Jaguar", "TheRoadIsYours", 200000);
@@ -19,18 +22,21 @@ public class MainVehiculos {
 
         System.out.println(registro.obtenerTodos());
 
-        registro.obtenerVehiculosMarca("Lexus")
-                // esto es un bucle tradicional expresado con Java 8
-                .forEach(
-                        coche -> System.out.println(coche)
-                );
+        Coche coche = registro.obtenerVehiculo("4749JAV");
+        if (coche != null) {
+            System.out.println("Coche con la matricula 4849JAV " + coche);
+        }
 
-        registro.obtenerVehiculoPrecioMax()
-                // esta expresión es equivalente a verificar diferente de null con Java 8
-                .ifPresent(
-                        coche -> System.out.println("Coche Max precio: " + coche)
-                );
+        List<Coche> coche_list = new ArrayList<>(registro.obtenerVehiculosMarca("Lexus"));
 
+        for (Coche coche_list_2 : coche_list) {
+            System.out.println(coche_list_2);
+        }
+        Coche coche_maximo = registro.obtenerVehiculoPrecioMax();
+
+        if (coche_maximo != null) {
+            System.out.println(coche_maximo);
+        }
         System.out.println("Eliminando coche con matricula 1234ENG");
         registro
                 .eliminarVehiculo("1234ENG");
@@ -38,3 +44,4 @@ public class MainVehiculos {
         System.out.println(registro.obtenerTodos());
 
     }
+}

@@ -23,6 +23,7 @@ public class MainTaller {
         System.out.println(taller.obtenerCoche(jose));
         // debes comprobar que las personas aparecen ordenadas según el criterio especificado en el comparador
         // que se pasa al constructor del TreeMap
+        System.out.println(taller.obtenerClientes());
 
     }
 }
