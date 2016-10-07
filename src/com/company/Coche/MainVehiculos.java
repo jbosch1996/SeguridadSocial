@@ -30,12 +30,12 @@ public class MainVehiculos {
         List<Coche> coche_list = new ArrayList<>(registro.obtenerVehiculosMarca("Lexus"));
 
         for (Coche coche_list_2 : coche_list) {
-            System.out.println(coche_list_2);
+            System.out.println("LEXUS" + coche_list_2);
         }
         Coche coche_maximo = registro.obtenerVehiculoPrecioMax();
 
         if (coche_maximo != null) {
-            System.out.println(coche_maximo);
+            System.out.println("El coche mas costoso "  + coche_maximo);
         }
         System.out.println("Eliminando coche con matricula 1234ENG");
         registro
